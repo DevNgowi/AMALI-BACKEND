@@ -1,0 +1,697 @@
+body {
+  background: #f5f5f5;
+}
+
+/* General Styles */
+.no-record {
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #06192d;
+  border-bottom: 1px solid #dee2e6;
+  height: 80px;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow-x: scroll;
+}
+
+.header-title {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.header-title>img {
+  width: 200px;
+  height: 70px;
+}
+
+.logout-button {
+  margin-left: auto;
+}
+
+/* Common Button Styles */
+.custom-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #28a745;
+  /* Green hover effect */
+}
+
+.custom-btn i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.custom-btn span {
+  font-size: 14px;
+}
+
+/* If you want specific overrides, you can define these as well */
+.custom-logout-btn,
+.custom-cashout-btn {
+  color: white;
+  /* Text color is white */
+}
+
+.custom-logout-btn:hover,
+.custom-cashout-btn:hover {
+  background-color: #28a745;
+  /* Green on hover */
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: 17%;
+  padding: 15px;
+  margin-top: 80px;
+  /* background-color: #ffffff; */
+  border-right: 1px solid #dee2e6;
+}
+
+.item_group {
+  background-color: #fff;
+  padding-top: 10px;
+  overflow-y: auto;
+  /* Enables vertical scrolling */
+  overflow-x: hidden;
+  /* Hides horizontal scrolling */
+  max-height: 680px;
+}
+
+
+.sidebar .item_group {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.item-group-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-group-list-item {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.item-group-list-item a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.item-group-list-item a:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Content Area */
+.content-area {
+  margin-top: 80px;
+  flex-grow: 1;
+  padding: 15px;
+  /* background-color: #ffffff; */
+}
+
+/* Process Payment Area */
+.process-payment-area {
+  width: 23%;
+  padding: 15px;
+  margin-top: 80px;
+  border-left: 1px solid #dee2e6;
+  margin-right: 20px;
+}
+
+/* Main Layout */
+.main-sales-container {
+  display: flex;
+  height: 100vh;
+}
+
+.payment-card {
+  /* Optional: Set a border or shadow for the card */
+  border: 1px solid #ddd;
+  /* border-radius: 8px; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.payment-details {
+  max-height: 720px;
+  /* Set a maximum height */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  padding: 15px;
+  /* Optional: Add some padding */
+}
+
+/* Flex container for items */
+
+/* General container for the item cards */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: start;
+}
+
+/* Individual item card */
+.item-card {
+  width: 178px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* background-color: #fff; */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Item image */
+.item-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Item details */
+.item-details {
+  padding: 10px;
+}
+
+.item-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.item-info {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0 0;
+}
+
+
+.walk_in_area {
+  justify-content: center;
+  display: flex;
+  padding-top: 10px;
+
+}
+
+
+.payment-info,
+.product-info,
+.total-amount {
+  margin-bottom: 20px;
+}
+
+.payment-info .payment-method,
+.payment-info .payment-terms {
+  margin-bottom: 15px;
+}
+
+.payment-info label,
+.product-info label,
+.total-amount label {
+  font-weight: 500;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.total-amount .amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-fast-cash {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.btn-fast-cash:hover {
+  background-color: #e0a800;
+}
+
+.btn-check-out {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-check-out:hover {
+  background-color: #218838;
+}
+
+.checkout-process {
+  display: none;
+}
+
+.checkout-header {
+  padding: 1rem;
+}
+
+.checkout-header .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-header .text-bold {
+  font-weight: bold;
+}
+
+.payment-details {
+  padding: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  border-radius: 0;
+  padding: 0.5rem;
+}
+
+.keypad-container {
+  margin-top: 2rem;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.keypad button {
+  background-color: #f1f1f1;
+  border: 1px solid gray;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.keypad button.bg-orange-500 {
+  background-color: #f59e0b;
+  color: #fff;
+}
+
+.keypad button.bg-red-500 {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.keypad button.bg-blue-600 {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.keypad button.bg-blue-500 {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.actions button {
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.actions button.bg-blue-100 {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.actions button.bg-orange-500 {
+  background-color: #f59e0b;
+  color: #fff;
+}
+
+.actions button.bg-blue-500 {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+
+/* Modal Styles */
+
+/* Modal Background */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1050;
+  /* Sit on top of other elements */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black w/ opacity */
+}
+
+/* Ensure the modal is displayed correctly */
+.modal.show {
+  display: block;
+  /* Ensure the modal is displayed */
+}
+
+.order_summary {
+  padding: 15px;
+}
+
+.date_container {
+  width: auto;
+}
+
+
+/* Peripheral Settings */
+.sidebar_setting {
+  width: 17%;
+  max-width: 400px;
+  /* max-height: 750px; */
+  padding: 15px;
+  margin: 50px;
+  margin-top: 100px;
+  background-color: #ffffff;
+  /* border-right: 1px solid #dee2e6; */
+}
+
+.peripheral_device {
+  background-color: #fff;
+  padding-top: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 680px;
+  
+}
+
+.sidebar_setting .peripheral_device {
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+/* Peripheral Device List */
+.peripheral_device_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Peripheral Device List Item */
+.peripheral_device_list_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Space between button and text */
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Button Styling */
+.peripheral_device_list_item button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.peripheral_device_list_item button:hover {
+  background-color: #218838;
+}
+
+/* Link Styling */
+.peripheral_device_list_item a {
+  flex-grow: 1;
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #212529;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.peripheral_device_list_item:hover {
+  background-color: #28a745;
+}
+
+.peripheral_device_list_item:hover a {
+  color: white;
+}
+
+/* No Record Found */
+.no-record {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+
+.settings_form {
+  padding: 20px;
+  margin-top: 100px;
+  width: 800px;
+  background: white;
+  /* border-radius: 8px; */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings_header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e9ecef;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.settings_title {
+  margin: 0;
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.settings_body {
+  padding: 24px;
+}
+
+.input_group {
+  margin-bottom: 20px;
+}
+
+.input_label {
+  display: block;
+  margin-bottom: 8px;
+  color: #495057;
+  font-weight: 500;
+}
+
+.input_field {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input_field:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.select_field {
+  height: 42px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='4'%3E%3Cpath d='M0 0l4 4 4-4z' fill='%23343a40'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  appearance: none;
+}
+
+.save_button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.save_button:hover {
+  background: #0056b3;
+}
+
+.loading_text,
+.no-record,
+.error_message {
+  text-align: center;
+  padding: 24px;
+  color: #666;
+}
+
+.error_message {
+  color: #dc3545;
+}
+
+.item_category {
+  background-color: #fff;
+  padding: 10px ;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  border-bottom: 1px solid #dee2e6;
+  max-width: 1160px;
+  margin: 0 auto;
+  scrollbar-width: thin;
+  margin-bottom: 10px;
+}
+
+.item_category::-webkit-scrollbar {
+  height: 8px;
+}
+
+.item_category::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.item_category::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.item-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.item-category-list-item {
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.item-category-list-item a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.item-category-list-item a:hover {
+  background-color: #28a745;
+  color: white;
+}

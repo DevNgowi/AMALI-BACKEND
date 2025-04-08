@@ -1,0 +1,153 @@
+:root {
+    --primary-color: #2D3A8C;
+    --secondary-color: #4C51BF;
+    --accent-color: #667EEA;
+    --text-color: #2D3748;
+    --error-color: #E53E3E;
+    --success-color: #48BB78;
+    --overlay-color: rgba(45, 58, 140, 0.85);
+}
+
+/* Body and Main Container Styles */
+.login-page {
+    background-image: url('../images/shopping_image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Add overlay to make text more readable */
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* background: var(--overlay-color); */
+    z-index: 1;
+}
+
+/* Ensure login box appears above overlay */
+.login-box {
+    width: 500px;
+    margin-top: 2rem;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.login-logo img {
+    max-width: 200px;
+    height: auto;
+    background: rgba(209, 201, 201, 0.95);
+    border-radius: 40px 0px 40px 0px;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+
+.login-card-body {
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.login-box-msg {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Form Elements */
+.input-group {
+    margin-bottom: 1.5rem;
+    padding: 5px;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding:  1.6rem;
+   
+    border: 2px solid #E2E8F0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-group-text {
+    background-color: transparent;
+    border: 2px solid #E2E8F0;
+    border-left: none;
+    color: var(--text-color);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+/* Checkbox Styles */
+.icheck-primary {
+    margin-top: 0.5rem;
+    font-size: 20px;
+}
+
+/* Link Styles */
+.forgot-password {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Error States */
+.is-invalid {
+    border-color: var(--error-color) !important;
+}
+
+.invalid-feedback {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .login-box {
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    .login-card-body {
+        padding: 1.5rem;
+    }
+}

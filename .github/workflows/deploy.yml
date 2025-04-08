@@ -1,0 +1,26 @@
+name: Deploy to cPanel Server
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to cPanel
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > key
+          chmod 600 key
+          ssh -i key -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd /home/${{ secrets.SSH_USER }}/public_html/your-project &&
+            git pull origin main &&
+            composer install --no-dev --optimize-autoloader &&
+            php artisan migrate --force  # Optional: for Laravel
+          "
+      - name: Cleanup
+        run: rm -f key
